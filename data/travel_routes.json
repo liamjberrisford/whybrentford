@@ -1,0 +1,549 @@
+{
+  "basis": "Illustrative rail corridors supported by operator network maps and station-to-station journey sources, not surveyed track alignments or timed itineraries. Published fastest train-and-walk benchmarks are independent of the illustrated routes.",
+  "stations": {
+    "Exeter St Davids": [
+      -3.5436,
+      50.729
+    ],
+    "Honiton": [
+      -3.1874,
+      50.7965
+    ],
+    "Axminster": [
+      -3.0043,
+      50.7793
+    ],
+    "Yeovil Junction": [
+      -2.6124,
+      50.9249
+    ],
+    "Salisbury": [
+      -1.8055,
+      51.0708
+    ],
+    "Andover": [
+      -1.4922,
+      51.2112
+    ],
+    "Basingstoke": [
+      -1.0877,
+      51.2684
+    ],
+    "Woking": [
+      -0.5573,
+      51.3183
+    ],
+    "Clapham Junction": [
+      -0.1703,
+      51.4643
+    ],
+    "Kew Bridge": [
+      -0.2879,
+      51.4895
+    ],
+    "Putney": [
+      -0.2165,
+      51.4613
+    ],
+    "West Brompton": [
+      -0.1956,
+      51.4871
+    ],
+    "Winchester": [
+      -1.3208,
+      51.0672
+    ],
+    "Southampton Central": [
+      -1.4136,
+      50.9074
+    ],
+    "Brockenhurst": [
+      -1.5736,
+      50.8169
+    ],
+    "Bournemouth": [
+      -1.8641,
+      50.7269
+    ],
+    "Clapham High Street": [
+      -0.1326,
+      51.4655
+    ],
+    "East Croydon": [
+      -0.0928,
+      51.3754
+    ],
+    "Gatwick Airport": [
+      -0.161,
+      51.1569
+    ],
+    "Haywards Heath": [
+      -0.1053,
+      51.0053
+    ],
+    "Brighton": [
+      -0.1413,
+      50.829
+    ],
+    "Falmer": [
+      -0.0873,
+      50.862
+    ],
+    "Taunton": [
+      -3.1027,
+      51.023
+    ],
+    "Bristol Temple Meads": [
+      -2.5803,
+      51.449
+    ],
+    "Cheltenham Spa": [
+      -2.1008,
+      51.8974
+    ],
+    "Birmingham New Street": [
+      -1.8989,
+      52.4778
+    ],
+    "Aston": [
+      -1.8719,
+      52.5042
+    ],
+    "Coventry": [
+      -1.5135,
+      52.4009
+    ],
+    "Coventry Arena": [
+      -1.4945,
+      52.4475
+    ],
+    "Derby": [
+      -1.4627,
+      52.9166
+    ],
+    "Nottingham": [
+      -1.1469,
+      52.9472
+    ],
+    "Sheffield": [
+      -1.462,
+      53.3781
+    ],
+    "Wakefield Westgate": [
+      -1.5061,
+      53.6827
+    ],
+    "Leeds": [
+      -1.5478,
+      53.7946
+    ],
+    "York": [
+      -1.0935,
+      53.9583
+    ],
+    "Darlington": [
+      -1.5465,
+      54.5207
+    ],
+    "Durham": [
+      -1.581,
+      54.7794
+    ],
+    "Newcastle": [
+      -1.6174,
+      54.9686
+    ],
+    "Sunderland": [
+      -1.3824,
+      54.9054
+    ],
+    "Doncaster": [
+      -1.1391,
+      53.5228
+    ],
+    "Hull": [
+      -0.3474,
+      53.7436
+    ],
+    "Stafford": [
+      -2.1229,
+      52.8039
+    ],
+    "Crewe": [
+      -2.4328,
+      53.0897
+    ],
+    "Runcorn": [
+      -2.7392,
+      53.3387
+    ],
+    "Liverpool Lime Street": [
+      -2.9773,
+      53.4073
+    ],
+    "Reading": [
+      -0.9718,
+      51.4588
+    ],
+    "London Paddington": [
+      -0.1774,
+      51.5152
+    ],
+    "London Liverpool Street": [
+      -0.0823,
+      51.5185
+    ],
+    "Colchester": [
+      0.8928,
+      51.9006
+    ],
+    "Ipswich": [
+      1.1445,
+      52.0505
+    ],
+    "Norwood Junction": [
+      -0.0751,
+      51.397
+    ]
+  },
+  "routes": [
+    {
+      "club": "Brentford",
+      "id": "brentford",
+      "color": "#dc1633",
+      "via": [
+        "Exeter St Davids",
+        "Honiton",
+        "Axminster",
+        "Yeovil Junction",
+        "Salisbury",
+        "Andover",
+        "Basingstoke",
+        "Woking",
+        "Clapham Junction",
+        "Kew Bridge"
+      ],
+      "summary": "Exeter → Salisbury → Clapham Junction → Kew Bridge → Gtech",
+      "sources": [
+        "https://www.southwesternrailway.com/plan-my-journey/our-network"
+      ],
+      "note": "Illustrative SWR corridor, changing at Clapham Junction. The 3h10 published benchmark is not the timing of this illustrated route."
+    },
+    {
+      "club": "Chelsea",
+      "id": "chelsea",
+      "color": "#2935c9",
+      "via": [
+        "Exeter St Davids",
+        "Honiton",
+        "Axminster",
+        "Yeovil Junction",
+        "Salisbury",
+        "Andover",
+        "Basingstoke",
+        "Woking",
+        "Clapham Junction",
+        "West Brompton"
+      ],
+      "summary": "Exeter → Salisbury → Clapham Junction → West Brompton → Stamford Bridge",
+      "sources": [
+        "https://www.southwesternrailway.com/plan-my-journey/our-network",
+        "https://tfl.gov.uk/maps/track/overground"
+      ],
+      "note": "SWR towards London, then the Mildmay line to West Brompton. Route schematic and published benchmark are separate."
+    },
+    {
+      "club": "Bournemouth",
+      "id": "bournemouth",
+      "color": "#7b3099",
+      "via": [
+        "Exeter St Davids",
+        "Honiton",
+        "Axminster",
+        "Yeovil Junction",
+        "Salisbury",
+        "Andover",
+        "Basingstoke",
+        "Winchester",
+        "Southampton Central",
+        "Brockenhurst",
+        "Bournemouth"
+      ],
+      "summary": "Exeter → Basingstoke → Southampton → Bournemouth → Vitality Stadium",
+      "sources": [
+        "https://www.southwesternrailway.com/plan-my-journey/our-network"
+      ],
+      "note": "One possible SWR corridor via Basingstoke. Alternatives can be faster; the published benchmark is not tied to this schematic route."
+    },
+    {
+      "club": "Fulham",
+      "id": "fulham",
+      "color": "#08685a",
+      "via": [
+        "Exeter St Davids",
+        "Honiton",
+        "Axminster",
+        "Yeovil Junction",
+        "Salisbury",
+        "Andover",
+        "Basingstoke",
+        "Woking",
+        "Clapham Junction",
+        "Putney"
+      ],
+      "summary": "Exeter → Salisbury → Clapham Junction → Putney → Craven Cottage",
+      "sources": [
+        "https://www.southwesternrailway.com/plan-my-journey/our-network"
+      ],
+      "note": "An illustrative SWR journey via Clapham Junction to Putney. Walking time depends on the stadium entrance."
+    },
+    {
+      "club": "Brighton & Hove Albion",
+      "id": "brighton",
+      "color": "#b85900",
+      "via": [
+        "Exeter St Davids",
+        "Honiton",
+        "Axminster",
+        "Yeovil Junction",
+        "Salisbury",
+        "Andover",
+        "Basingstoke",
+        "Woking",
+        "Clapham Junction",
+        "East Croydon",
+        "Gatwick Airport",
+        "Haywards Heath",
+        "Brighton",
+        "Falmer"
+      ],
+      "summary": "Exeter → Clapham Junction → Brighton → Falmer → Amex",
+      "sources": [
+        "https://www.southwesternrailway.com/plan-my-journey/our-network",
+        "https://www.southernrailway.com/travel-information/plan-your-journey/route-map"
+      ],
+      "note": "A possible SWR/Southern corridor via Clapham Junction and Brighton. The published benchmark need not follow this exact itinerary."
+    },
+    {
+      "club": "Aston Villa",
+      "id": "aston-villa",
+      "color": "#741438",
+      "via": [
+        "Exeter St Davids",
+        "Taunton",
+        "Bristol Temple Meads",
+        "Cheltenham Spa",
+        "Birmingham New Street",
+        "Aston"
+      ],
+      "summary": "Exeter St Davids → Birmingham New Street → Aston → stadium",
+      "sources": [
+        "https://www.crosscountrytrains.co.uk/routes-destinations/route-map",
+        "https://www.nationalrail.co.uk/travel-information/maps-of-the-national-rail-network/"
+      ],
+      "note": "Illustrative corridor through approximate station locations; check connections for your travel date. The published train-and-walk benchmark is separate from this drawn route."
+    },
+    {
+      "club": "Coventry City",
+      "id": "coventry-city",
+      "color": "#156080",
+      "via": [
+        "Exeter St Davids",
+        "Taunton",
+        "Bristol Temple Meads",
+        "Cheltenham Spa",
+        "Birmingham New Street",
+        "Coventry",
+        "Coventry Arena"
+      ],
+      "summary": "Exeter St Davids → Birmingham New Street → Coventry Arena → stadium",
+      "sources": [
+        "https://www.crosscountrytrains.co.uk/routes-destinations/route-map",
+        "https://www.nationalrail.co.uk/travel-information/maps-of-the-national-rail-network/"
+      ],
+      "note": "Illustrative corridor through approximate station locations; check connections for your travel date. The published train-and-walk benchmark is separate from this drawn route."
+    },
+    {
+      "club": "Crystal Palace",
+      "id": "crystal-palace",
+      "color": "#d04918",
+      "via": [
+        "Exeter St Davids",
+        "Honiton",
+        "Axminster",
+        "Yeovil Junction",
+        "Salisbury",
+        "Andover",
+        "Basingstoke",
+        "Woking",
+        "Clapham Junction",
+        "East Croydon",
+        "Norwood Junction"
+      ],
+      "summary": "Exeter St Davids → Salisbury → Norwood Junction → stadium",
+      "sources": [
+        "https://www.southwesternrailway.com/plan-my-journey/our-network",
+        "https://www.southernrailway.com/travel-information/plan-your-journey/route-map"
+      ],
+      "note": "Illustrative corridor through approximate station locations; check connections for your travel date. The published train-and-walk benchmark is separate from this drawn route."
+    },
+    {
+      "club": "Everton",
+      "id": "everton",
+      "color": "#193f8a",
+      "via": [
+        "Exeter St Davids",
+        "Taunton",
+        "Bristol Temple Meads",
+        "Cheltenham Spa",
+        "Birmingham New Street",
+        "Stafford",
+        "Crewe",
+        "Runcorn",
+        "Liverpool Lime Street"
+      ],
+      "summary": "Exeter St Davids → Birmingham New Street → Liverpool Lime Street → stadium",
+      "sources": [
+        "https://www.crosscountrytrains.co.uk/routes-destinations/route-map",
+        "https://www.avantiwestcoast.co.uk/travel-information/our-routes/our-route-map"
+      ],
+      "note": "Illustrative corridor through approximate station locations; check connections for your travel date. The published train-and-walk benchmark is separate from this drawn route."
+    },
+    {
+      "club": "Hull City",
+      "id": "hull-city",
+      "color": "#9b6511",
+      "via": [
+        "Exeter St Davids",
+        "Taunton",
+        "Bristol Temple Meads",
+        "Cheltenham Spa",
+        "Birmingham New Street",
+        "Derby",
+        "Sheffield",
+        "Doncaster",
+        "Hull"
+      ],
+      "summary": "Exeter St Davids → Birmingham New Street → Hull → stadium",
+      "sources": [
+        "https://www.crosscountrytrains.co.uk/routes-destinations/route-map",
+        "https://www.northernrailway.co.uk/travel/network-map"
+      ],
+      "note": "Illustrative corridor through approximate station locations; check connections for your travel date. The published train-and-walk benchmark is separate from this drawn route."
+    },
+    {
+      "club": "Ipswich Town",
+      "id": "ipswich-town",
+      "color": "#006cb8",
+      "via": [
+        "Exeter St Davids",
+        "Taunton",
+        "Reading",
+        "London Paddington",
+        "London Liverpool Street",
+        "Colchester",
+        "Ipswich"
+      ],
+      "summary": "Exeter St Davids → London Liverpool Street → Ipswich → stadium",
+      "sources": [
+        "https://www.gwr.com/stations-and-destinations/stations",
+        "https://tfl.gov.uk/maps/track/elizabeth-line",
+        "https://www.greateranglia.co.uk/travel-information/journey-planning/network-map"
+      ],
+      "note": "Illustrative corridor through approximate station locations; check connections for your travel date. The published train-and-walk benchmark is separate from this drawn route."
+    },
+    {
+      "club": "Leeds United",
+      "id": "leeds",
+      "color": "#5d6919",
+      "via": [
+        "Exeter St Davids",
+        "Taunton",
+        "Bristol Temple Meads",
+        "Cheltenham Spa",
+        "Birmingham New Street",
+        "Derby",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds"
+      ],
+      "summary": "Exeter St Davids → Birmingham New Street → Leeds → stadium",
+      "sources": [
+        "https://www.crosscountrytrains.co.uk/routes-destinations/route-map"
+      ],
+      "note": "Illustrative corridor through approximate station locations; check connections for your travel date. The published train-and-walk benchmark is separate from this drawn route."
+    },
+    {
+      "club": "Newcastle United",
+      "id": "newcastle",
+      "color": "#34343b",
+      "via": [
+        "Exeter St Davids",
+        "Taunton",
+        "Bristol Temple Meads",
+        "Cheltenham Spa",
+        "Birmingham New Street",
+        "Derby",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle"
+      ],
+      "summary": "Exeter St Davids → Birmingham New Street → Newcastle → stadium",
+      "sources": [
+        "https://www.crosscountrytrains.co.uk/routes-destinations/route-map"
+      ],
+      "note": "Illustrative corridor through approximate station locations; check connections for your travel date. The published train-and-walk benchmark is separate from this drawn route."
+    },
+    {
+      "club": "Nottingham Forest",
+      "id": "nottingham-forest",
+      "color": "#a70b36",
+      "via": [
+        "Exeter St Davids",
+        "Taunton",
+        "Bristol Temple Meads",
+        "Cheltenham Spa",
+        "Birmingham New Street",
+        "Derby",
+        "Nottingham"
+      ],
+      "summary": "Exeter St Davids → Birmingham New Street → Nottingham → stadium",
+      "sources": [
+        "https://www.crosscountrytrains.co.uk/routes-destinations/route-map",
+        "https://www.eastmidlandsrailway.co.uk/travel-information/live-network-map/map"
+      ],
+      "note": "Illustrative corridor through approximate station locations; check connections for your travel date. The published train-and-walk benchmark is separate from this drawn route."
+    },
+    {
+      "club": "Sunderland",
+      "id": "sunderland",
+      "color": "#8d4274",
+      "via": [
+        "Exeter St Davids",
+        "Taunton",
+        "Bristol Temple Meads",
+        "Cheltenham Spa",
+        "Birmingham New Street",
+        "Derby",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Sunderland"
+      ],
+      "summary": "Exeter St Davids → Birmingham New Street → Sunderland → stadium",
+      "sources": [
+        "https://www.crosscountrytrains.co.uk/routes-destinations/route-map",
+        "https://www.northernrailway.co.uk/travel/network-map"
+      ],
+      "note": "Illustrative corridor through approximate station locations; check connections for your travel date. The published train-and-walk benchmark is separate from this drawn route."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+[
+  { "id": "arsenal", "name": "Arsenal" },
+  { "id": "chelsea", "name": "Chelsea" },
+  { "id": "liverpool", "name": "Liverpool" },
+  { "id": "man-city", "name": "Manchester City" },
+  { "id": "man-utd", "name": "Manchester United" },
+  { "id": "spurs", "name": "Tottenham Hotspur" }
+]
