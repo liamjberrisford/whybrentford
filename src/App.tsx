@@ -36,7 +36,7 @@ function Explanation({ stage }: { stage: number }) {
 
 export default function App() {
   const [buzzing, setBuzzing] = useState(true);
-  const [beeCount, setBeeCount] = useState(20);
+  const [beeCount, setBeeCount] = useState(3);
   const [stage, setStage] = useState(0);
   const [dialog, setDialog] = useState<'sources' | 'bees' | null>(null);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
