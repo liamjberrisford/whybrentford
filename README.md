@@ -73,7 +73,7 @@ It validates required fields, unique club names, coordinates, timing types, sour
 - `travel-data.json`: the same validated data for the table, chart descriptions and closing journey benchmark.
 - `club_travel_from_exeter.csv`: the downloadable copy of the source CSV.
 
-The page displays the Python-produced graphics directly and shows an always-visible table of all fourteen candidates, sorted by the same total. The UK route map is the default travel view, before the data table, with fourteen selectable club corridors and matching time labels; the numerical ranking remains on a secondary tab. Rebuild the site after regenerating before deploying.
+The page displays the Python-produced graphics directly and shows an always-visible table of all fourteen candidates, sorted by the same total. The route map is the default travel view, before the data table. A club picker selects any of the fourteen corridors, and numbered map markers match the travel table. England detail is shown first, with a Whole UK view and the complete poster available through Enlarge map; the numerical ranking remains on a secondary tab. Rebuild the site after regenerating before deploying.
 
 Optional arguments:
 
@@ -83,16 +83,17 @@ python analysis/create_travel_visualisations.py --csv path/to/input.csv --output
 
 ## Content, accessibility and assets
 
-- `src/App.tsx`: the tabbed selection workspace. One stage and one badge table are visible at a time, with a short summary above the badges; top tabs and Back/Next controls move between all seven cuts without scrolling through a story. Tabs support arrow keys, Home and End. Badges and stage content occupy two full-width rows on laptops and phones. The tab selector stays visible while the selected stage is viewed. Desktop shows ten badges per row; phones show five. Default subheadings and unused hints are removed; badge explanations appear only after selection.
+- `src/App.tsx`: the tabbed selection workspace. One stage and one badge table are visible at a time, with a short summary above the badges; top tabs and Back/Next controls move between all seven cuts without scrolling through a story. Tabs support arrow keys, Home and End. Badges and stage content occupy two full-width rows on laptops and phones. The swipeable tab selector stays visible while the selected stage is viewed, and selecting a stage brings its tab into view. Phones have fixed Back/Next controls above the safe area. Badges use three columns on narrow phones, four from 360px, five from 600px and ten from 960px. Default subheadings and unused hints are removed; badge explanations appear only after selection.
 - `src/components/Dialog.tsx`: native modal dialogs for sources, extra bees and enlarged travel graphics, including Escape dismissal and focus restoration.
-- `src/workspace.css`: the responsive tabbed layout, compact badge board and dialog styles.
+- `src/workspace.css`: the mobile-first tabbed layout, touch controls, badge board and dialog styles.
 - A one-sentence summary is always visible above each badge board. Longer explanations remain visible below the stage content; the travel stage orders badges, map/chart, data table, then explanation. Route notes, detailed train methodology and credits remain expandable; badge verdicts stay available on click.
-- `src/components/TravelAnalysis.tsx`: graphics, keyboard-accessible tabs, methodology, table and CSV download.
+- `src/components/TravelAnalysis.tsx`: graphics, keyboard-accessible tabs, a native club picker, methodology, table and CSV download.
+- `src/components/TravelMap.tsx`: responsive England and whole-UK map views using the existing sourced SVG artwork.
 - The final tab’s explanation explains the personal criteria; these are personal reasons, not numerical scores.
 - `src/data/sources.ts`: dated references, linked beside factual claims and in the sources section.
 - `src/styles.css`: the base layout and accessibility styles.
 - `src/bee.css`: the deliberately tacky theme: gold WordArt, checkerboard background, fluorescent panels, hazard stripes, animated bees, badge boards and responsive overrides.
-- `src/components/BeeNonsense.tsx`: the compact bee slider and optional emergency bee button. The page starts with stage tabs and club badges; the former intro, ticker, awards and stadium photo are removed. Extra bee controls sit behind “More bees?”. The button releases a temporary burst of twelve decorative bees and cycles fictional committee announcements; its deployment count is local to the current page visit.
+- `src/components/BeeNonsense.tsx`: the compact bee slider and optional emergency bee button. The page starts with stage tabs and club badges; the former intro, ticker, awards and stadium photo are removed. The header’s bee-count control opens the slider and pause button; extra bee controls sit behind “More bees?”. The button releases a temporary burst of twelve decorative bees and cycles fictional committee announcements; its deployment count is local to the current page visit.
 - The “Flying bees” slider adjusts the permanent decorative swarm from 0 to 100 bees immediately (default 3). It supports touch and keyboard controls. Its count lasts for the current page visit; pausing keeps the chosen count for when the bees resume.
 - `src/components/ClubBoard.tsx`: the same 20 badges carried through seven stages, with cumulative greying-out, OUT/IN text stamps, a remaining count and clickable reasons.
 - `src/data/selection.ts`: the editorial elimination sequence and personal comic explanations. Counts are 20 → 14 → 6 → 4 → 3 → 2 → 1: all clubs, big six removed, travel shortlist, brains, stress, nearly, Brentford. These are narrative preferences, not a calculated travel threshold or an objective judgement of clubs.
@@ -113,7 +114,7 @@ Local development uses the normal root path. To check the GitHub Pages build loc
 ```bash
 npm run generate
 VITE_BASE_PATH=/whybrentford/ npm run build
-npm run preview
+VITE_BASE_PATH=/whybrentford/ npm run preview
 ```
 
 Open the preview address with `/whybrentford/` appended. `src/assets.ts` uses Vite’s configured base path for badges, maps, downloaded data and fetched travel data. Vite also adjusts fonts and other stylesheet assets. If you rename the repository or add a custom domain, update `VITE_BASE_PATH` in the workflow.

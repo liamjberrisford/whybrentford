@@ -40,9 +40,13 @@ export default function App() {
   const [stage, setStage] = useState(0);
   const [dialog, setDialog] = useState<'sources' | 'bees' | null>(null);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const stageTabs = useRef<HTMLDivElement>(null);
   const { clubs, routes, error } = useTravelData();
   const selectStage = (next: number, focus = false) => {
     setStage(next);
+    const selectedTab = tabRefs.current[next];
+    const tabRow = stageTabs.current;
+    if (selectedTab && tabRow) tabRow.scrollTo({ left: selectedTab.offsetLeft - (tabRow.clientWidth - selectedTab.clientWidth) / 2 });
     if (focus) tabRefs.current[next]?.focus({ preventScroll: true });
     const main = document.getElementById('main');
     if (main && main.getBoundingClientRect().top < 0) main.scrollIntoView({ block: 'start' });
@@ -50,9 +54,9 @@ export default function App() {
   return <div className={`bee-site selection-workspace ${buzzing ? '' : 'bees-paused'}`}>
     <BeeSwarm count={beeCount}/>
     <a className="skip-link" href="#main">Skip to the clubs</a>
-    <header id="top" className="compact-header"><h1>Why <em>Brentford?</em></h1><div className="compact-bee-controls"><BeeSlider buzzing={buzzing} beeCount={beeCount} onBeeCountChange={setBeeCount} compact/><button className="bee-pause" onClick={() => setBuzzing(!buzzing)} aria-pressed={!buzzing}>{buzzing ? 'Pause the bees' : 'Release the bees'}</button></div></header>
+    <header id="top" className="compact-header"><h1>Why <em>Brentford?</em></h1><details className="bee-settings"><summary><span aria-hidden="true">🐝</span> {beeCount}<span className="sr-only"> bees. Adjust the bees</span><span aria-hidden="true">⌄</span></summary><div className="compact-bee-controls"><BeeSlider buzzing={buzzing} beeCount={beeCount} onBeeCountChange={setBeeCount} compact/><button className="bee-pause" onClick={() => setBuzzing(!buzzing)} aria-pressed={!buzzing}>{buzzing ? 'Pause the bees' : 'Release the bees'}</button></div></details></header>
     <main id="main" className="selection-main" tabIndex={-1}>
-      <div className="selection-controls"><p id="tab-instructions" className="tab-instructions">Pick a tab to make the next cut <span aria-hidden="true">↓</span></p><div className="selection-tabs" role="tablist" aria-label="Choose a selection stage" aria-describedby="tab-instructions">{tabs.map((label, index) => <button key={label} ref={el => { tabRefs.current[index] = el; }} id={`stage-tab-${index}`} role="tab" aria-selected={stage === index} aria-controls={`stage-panel-${index}`} tabIndex={stage === index ? 0 : -1} className={stage === index ? 'active' : index < stage ? 'visited' : ''} onClick={() => selectStage(index)} onKeyDown={e => {
+      <div className="selection-controls"><p id="tab-instructions" className="tab-instructions">Choose a step <span aria-hidden="true">↓</span><small>{stage + 1} / {tabs.length}</small></p><div ref={stageTabs} className="selection-tabs" role="tablist" aria-label="Choose a selection stage" aria-describedby="tab-instructions">{tabs.map((label, index) => <button key={label} ref={el => { tabRefs.current[index] = el; }} id={`stage-tab-${index}`} role="tab" aria-selected={stage === index} aria-controls={`stage-panel-${index}`} tabIndex={stage === index ? 0 : -1} className={stage === index ? 'active' : index < stage ? 'visited' : ''} onClick={() => selectStage(index)} onKeyDown={e => {
         if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) return;
         e.preventDefault();
         const next = e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1 : (index + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
@@ -64,7 +68,7 @@ export default function App() {
           <Explanation stage={stage}/>
         </aside></>}
       </div>)}
-      <div className="workspace-bottom"><div className="workspace-links"><button onClick={() => setDialog('sources')}>Receipts ↗</button><button onClick={() => setDialog('bees')}>More bees?</button></div><div className="stage-navigation"><button disabled={stage === 0} onClick={() => selectStage(stage - 1, true)} aria-label="Previous selection stage">← Back</button><button className="next-stage" onClick={() => selectStage(stage === 6 ? 0 : stage + 1, true)}>{stage === 6 ? 'Again? ↺' : `${tabs[stage + 1]} →`}</button></div></div>
+      <div className="workspace-bottom"><div className="workspace-links"><button onClick={() => setDialog('sources')}>Receipts ↗</button><button onClick={() => setDialog('bees')}>More bees?</button></div><div className="stage-navigation"><button disabled={stage === 0} onClick={() => selectStage(stage - 1, true)} aria-label="Previous selection stage">← Back</button><button className="next-stage" onClick={() => selectStage(stage === 6 ? 0 : stage + 1, true)}><span className="next-label">{stage === 6 ? 'Start again' : 'Next step'}</span>{stage === 6 ? 'All in ↺' : `${tabs[stage + 1]} →`}</button></div></div>
     </main>
     {dialog && <Dialog title={dialog === 'sources' ? 'Receipts.' : 'More bees. Obviously.'} onClose={() => setDialog(null)}>
       {dialog === 'bees' && <BeeControl buzzing={buzzing} beeCount={beeCount} onBeeCountChange={setBeeCount}/>}
